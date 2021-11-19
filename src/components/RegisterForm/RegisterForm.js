@@ -39,7 +39,7 @@ const RegisterForm = (props) => {
         type="password"
         placeholder="Confirm password"
       />
-      <Button text="Login" />
+      <Button text="Register" />
       <div className={classes.register}>
         <p>Already have an account?</p>
         <p onClick={handleClick}>Login</p>

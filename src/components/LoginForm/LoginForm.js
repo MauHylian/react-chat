@@ -11,6 +11,10 @@ const LoginForm = (props) => {
     props.handleRegisterClick(true);
   };
 
+  const handleLogin = () => {
+    console.log("Clicked login");
+  };
+
   return (
     <Modal>
       <p
@@ -29,7 +33,7 @@ const LoginForm = (props) => {
         type="password"
         placeholder="Password"
       />
-      <Button text="Login" />
+      <Button text="Login" onClick={handleLogin} />
       <div className={classes.register}>
         <p>Don't have an account?</p>
         <p onClick={handleClick}>Register</p>
