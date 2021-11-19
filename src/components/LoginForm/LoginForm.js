@@ -18,7 +18,13 @@ const LoginForm = (props) => {
   return (
     <Modal>
       <p
-        style={{ marginBottom: "1rem", textAlign: "center" }}
+        style={{
+          marginBottom: "1rem",
+          textAlign: "center",
+          fontWeight: "lighter",
+          fontSize: "3rem",
+          fontStyle: "italic",
+        }}
         className={classes.loginTitle}
       >
         Pictochat
