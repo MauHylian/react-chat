@@ -8,6 +8,7 @@ import RegisterForm from "./components/RegisterForm/RegisterForm";
 
 const App = () => {
   const [isRegistering, setIsRegistering] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // Gets TRUE from the LoginForm component, meaning the user clicked
   // Register and now the app should display the RegisterForm component
@@ -20,13 +21,32 @@ const App = () => {
     setIsRegistering(data);
   };
 
+  const loginCallback = (data) => {
+    setIsLoggedIn(data);
+    console.log(data);
+  };
+
+  const logoutCallback = (data) => {
+    console.log(data);
+    setIsLoggedIn(data);
+  };
+
   return (
     <div className={classes.App}>
-      <Header title="Pictochat" />
-      {isRegistering ? (
+      <Header
+        title="Pictochat"
+        isLoggedIn={isLoggedIn}
+        handleLogout={logoutCallback}
+      />
+      {isLoggedIn ? (
+        <p>Logged in</p>
+      ) : isRegistering ? (
         <RegisterForm handleRegisterClick={registerFalseCallback} />
       ) : (
-        <LoginForm handleRegisterClick={registerCallback} />
+        <LoginForm
+          handleRegisterClick={registerCallback}
+          handleLogin={loginCallback}
+        />
       )}
     </div>
   );
