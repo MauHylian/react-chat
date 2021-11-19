@@ -1,0 +1,8 @@
+.input {
+  width: 100%;
+  padding: 12px;
+  outline: none;
+  background-color: #fafafa;
+  border: 1px solid #dbdbdb;
+  box-sizing: border-box;
+}

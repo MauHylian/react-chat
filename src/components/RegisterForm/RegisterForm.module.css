@@ -1,0 +1,12 @@
+.register {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.register p:last-child {
+  cursor: pointer;
+  margin-left: 5px;
+  color: #d735ff;
+}

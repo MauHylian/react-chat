@@ -1,0 +1,21 @@
+vars {
+  --modal-width: 25rem;
+  --modal-height: 20rem;
+  --modal-top: calc(20rem / 2);
+}
+
+.modal {
+  position: absolute;
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 20px;
+  width: 25rem;
+  min-height: 20rem;
+  top: calc(50% - 10rem);
+  left: calc(50% - 12.5rem);
+}
+
+.modal p {
+  margin: 0;
+}
