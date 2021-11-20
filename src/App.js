@@ -4,6 +4,7 @@ import classes from "./App.module.css";
 
 import Header from "./components/Header/Header";
 import LoginForm from "./components/LoginForm/LoginForm";
+import Sidebar from "./components/Nav/Sidebar/Sidebar";
 import RegisterForm from "./components/RegisterForm/RegisterForm";
 
 const App = () => {
@@ -23,11 +24,9 @@ const App = () => {
 
   const loginCallback = (data) => {
     setIsLoggedIn(data);
-    console.log(data);
   };
 
   const logoutCallback = (data) => {
-    console.log(data);
     setIsLoggedIn(data);
   };
 
@@ -38,16 +37,19 @@ const App = () => {
         isLoggedIn={isLoggedIn}
         handleLogout={logoutCallback}
       />
-      {isLoggedIn ? (
-        <p>Logged in</p>
-      ) : isRegistering ? (
-        <RegisterForm handleRegisterClick={registerFalseCallback} />
-      ) : (
-        <LoginForm
-          handleRegisterClick={registerCallback}
-          handleLogin={loginCallback}
-        />
-      )}
+      <div style={{ display: "flex", height: "100%" }}>
+        <Sidebar />
+        {isLoggedIn ? (
+          <p>Logged in</p>
+        ) : isRegistering ? (
+          <RegisterForm handleRegisterClick={registerFalseCallback} />
+        ) : (
+          <LoginForm
+            handleRegisterClick={registerCallback}
+            handleLogin={loginCallback}
+          />
+        )}
+      </div>
     </div>
   );
 };

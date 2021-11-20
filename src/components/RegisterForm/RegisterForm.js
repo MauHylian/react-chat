@@ -32,6 +32,7 @@ const RegisterForm = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     console.log("Submit");
     console.log(values);
 

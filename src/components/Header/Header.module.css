@@ -1,7 +1,10 @@
 .header {
+  display: flex;
   background-color: #ffffff;
-  padding: 1rem;
+  padding: 5px;
   border: 1px solid #dbdbdb;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header p {

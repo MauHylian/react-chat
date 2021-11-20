@@ -1,0 +1,13 @@
+.link {
+  display: flex;
+  padding: 1rem;
+}
+
+.link:hover {
+  cursor: pointer;
+  background-color: #efefef;
+}
+
+.icon {
+  margin-right: 1rem;
+}
