@@ -50,8 +50,13 @@ const App = () => {
                 name="MauHylian"
                 email="mauhylian@gmail.com"
               />
-              <Link icon={<SettingsOutlinedIcon />} text="Settings" />
               <Link
+                onClick={() => console.log("Settings")}
+                icon={<SettingsOutlinedIcon />}
+                text="Settings"
+              />
+              <Link
+                handleLogout={logoutCallback}
                 style={{ backgroundColor: "#ff7070" }}
                 icon={<LogoutIcon />}
                 text="Logout"
