@@ -7,6 +7,15 @@ import LoginForm from "./components/LoginForm/LoginForm";
 import Sidebar from "./components/Nav/Sidebar/Sidebar";
 import RegisterForm from "./components/RegisterForm/RegisterForm";
 
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import LogoutIcon from "@mui/icons-material/Logout";
+
+import Link from "./components/Nav/Link/Link";
+import UserInfo from "./components/UserInfo/UserInfo";
+
+import Pic from "./assets/profilepic.png";
+import NonSquare from "./assets/nonsquare.jpg";
+
 const App = () => {
   const [isRegistering, setIsRegistering] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -32,22 +41,45 @@ const App = () => {
 
   return (
     <div className={classes.App}>
-      <Header
-        title="Pictochat"
-        isLoggedIn={isLoggedIn}
-        handleLogout={logoutCallback}
-      />
       <div style={{ display: "flex", height: "100%" }}>
-        <Sidebar />
         {isLoggedIn ? (
-          <p>Logged in</p>
+          <div style={{ display: "flex" }}>
+            <Sidebar>
+              <UserInfo
+                src={NonSquare}
+                name="MauHylian"
+                email="mauhylian@gmail.com"
+              />
+              <Link icon={<SettingsOutlinedIcon />} text="Settings" />
+              <Link
+                style={{ backgroundColor: "#ff7070" }}
+                icon={<LogoutIcon />}
+                text="Logout"
+              />
+            </Sidebar>
+            <p>Logged in</p>
+          </div>
         ) : isRegistering ? (
-          <RegisterForm handleRegisterClick={registerFalseCallback} />
+          <div style={{ width: "100%" }}>
+            <Header
+              title="Pictochat"
+              isLoggedIn={isLoggedIn}
+              handleLogout={logoutCallback}
+            />
+            <RegisterForm handleRegisterClick={registerFalseCallback} />
+          </div>
         ) : (
-          <LoginForm
-            handleRegisterClick={registerCallback}
-            handleLogin={loginCallback}
-          />
+          <div style={{ width: "100%" }}>
+            <Header
+              title="Pictochat"
+              isLoggedIn={isLoggedIn}
+              handleLogout={logoutCallback}
+            />
+            <LoginForm
+              handleRegisterClick={registerCallback}
+              handleLogin={loginCallback}
+            />
+          </div>
         )}
       </div>
     </div>

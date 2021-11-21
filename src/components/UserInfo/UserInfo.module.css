@@ -1,0 +1,26 @@
+.infoContainer {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.infoContainer p {
+  margin: 0;
+}
+
+.imgContainer {
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+}
+
+.mask {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+img {
+  object-fit: cover;
+  width: 15rem;
+}
