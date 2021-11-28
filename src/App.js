@@ -15,6 +15,7 @@ import UserInfo from "./components/UserInfo/UserInfo";
 
 import Pic from "./assets/profilepic.png";
 import NonSquare from "./assets/nonsquare.jpg";
+import NewChat from "./screens/NewChat/NewChat";
 
 const App = () => {
   const [isRegistering, setIsRegistering] = useState(false);
@@ -41,9 +42,9 @@ const App = () => {
 
   return (
     <div className={classes.App}>
-      <div style={{ display: "flex", height: "100%" }}>
+      <div style={{ display: "flex", height: "100%", width: "100%" }}>
         {isLoggedIn ? (
-          <div style={{ display: "flex" }}>
+          <div style={{ display: "flex", width: "100%" }}>
             <Sidebar>
               <UserInfo
                 src={NonSquare}
@@ -62,7 +63,10 @@ const App = () => {
                 text="Logout"
               />
             </Sidebar>
-            <p>Logged in</p>
+            <div className={classes.container}>
+              <NewChat name={"MauHylian"} />
+            </div>
+            <Sidebar></Sidebar>
           </div>
         ) : isRegistering ? (
           <div style={{ width: "100%" }}>
