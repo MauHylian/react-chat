@@ -16,6 +16,9 @@ import UserInfo from "./components/UserInfo/UserInfo";
 import Pic from "./assets/profilepic.png";
 import NonSquare from "./assets/nonsquare.jpg";
 import NewChat from "./screens/NewChat/NewChat";
+import { Route, Routes } from "react-router";
+import { NavLink } from "react-router-dom";
+import Settings from "./screens/Settings/Settings";
 
 const App = () => {
   const [isRegistering, setIsRegistering] = useState(false);
@@ -51,11 +54,13 @@ const App = () => {
                 name="MauHylian"
                 email="mauhylian@gmail.com"
               />
-              <Link
-                onClick={() => console.log("Settings")}
-                icon={<SettingsOutlinedIcon />}
-                text="Settings"
-              />
+              <NavLink to="/settings">
+                <Link
+                  onClick={() => console.log("Settings")}
+                  icon={<SettingsOutlinedIcon />}
+                  text="Settings"
+                />
+              </NavLink>
               <Link
                 handleLogout={logoutCallback}
                 style={{ backgroundColor: "#ff7070" }}
@@ -63,8 +68,15 @@ const App = () => {
                 text="Logout"
               />
             </Sidebar>
+            {/* ROUTES */}
             <div className={classes.container}>
-              <NewChat name={"MauHylian"} />
+              <Routes>
+                <Route
+                  path="/home"
+                  element={<NewChat name={"MauHylian"} />}
+                ></Route>
+                <Route path="/settings" element={<Settings />}></Route>
+              </Routes>
             </div>
             <Sidebar></Sidebar>
           </div>
